@@ -20,6 +20,7 @@ screenshots of each stage are in [`docs/screenshots/`](docs/screenshots/).
 - Configuring Agile project tracking with a custom workflow automation rule
 
 ## Architecture
+```
 Dev-VM (Docker, Git)
 │
 │ build & push image
@@ -45,6 +46,7 @@ git push
 │ 3. Tag image │ │ → cluster unhealthy = STOP here │
 │ 4. Push to ACR │ │ 3. Deploy to AKS │
 └─────────────────────────┘ └───────────────────────────────────┘
+```
 
 ## Resources provisioned
 
@@ -60,7 +62,6 @@ git push
 | Azure Kubernetes Service     | `Dev-AKS`           | Runs the containerized app (1 node, Standard_B2s) |
 | Azure DevOps project         | `pipeline1234`     | Hosts the Git repo, CI pipeline, and release pipeline |
 
-## Project structure
 ## Project structure
 
 ```
