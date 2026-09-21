@@ -61,18 +61,22 @@ git push
 | Azure DevOps project         | `pipeline1234`     | Hosts the Git repo, CI pipeline, and release pipeline |
 
 ## Project structure
+## Project structure
+
+```
 azure-aks-cicd-final/
 ├── app/
-│ ├── index.html # Static "Hello World" page
-│ └── Dockerfile # Containerizes the app with Nginx
+│   ├── index.html              # Static "Hello World" page
+│   └── Dockerfile               # Containerizes the app with Nginx
 ├── k8s/
-│ ├── deployment.yaml # Deploys the app to AKS
-│ └── service.yaml # LoadBalancer — exposes the app publicly
+│   ├── deployment.yaml          # Deploys the app to AKS
+│   └── service.yaml             # LoadBalancer — exposes the app publicly
 ├── scripts/
-│ └── script.ps1 # Kubernetes health check, gates the release
+│   └── script.ps1                # Kubernetes health check, gates the release
 └── docs/
-├── walkthrough.md # Full step-by-step build log
-└── screenshots/ # Evidence of each stage
+    ├── walkthrough.md            # Full step-by-step build log
+    └── screenshots/              # Evidence of each stage
+```
 
 ## How it was built (summary)
 
