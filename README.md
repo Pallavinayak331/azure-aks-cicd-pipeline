@@ -109,7 +109,7 @@ browser screenshot in `docs/screenshots/`.
 ![CD pipeline](docs/screenshots/cd-pipeline-success.png)
 
 **Live result**
-![Hello World live](docs/screenshots/Hello World Live.png)
+![Hello World live](docs/screenshots/Hello-World-Live.png)
 
 ## Tech stack
 
