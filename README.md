@@ -1,23 +1,24 @@
-# Azure End-to-End DevOps Pipeline
+# Azure AKS CI/CD Pipeline Project
 
-A complete DevOps workflow built and executed on Azure: infrastructure
-provisioned via the Azure Portal and CLI, a containerized app built and
-pushed through Azure Container Registry, deployed to Azure Kubernetes
-Service, and automated end-to-end with an Azure DevOps CI/CD pipeline —
-including a Kubernetes health-check gate before every release, and Azure
-Boards configured with sprint planning and workflow automation.
+This project demonstrates an end-to-end CI/CD workflow using Azure DevOps, Azure Container Registry (ACR), and Azure Kubernetes Service (AKS).
 
-Every step below was executed and verified live (not just written as code) —
-screenshots of each stage are in [`docs/screenshots/`](docs/screenshots/).
+## Key Features
 
-## What this demonstrates
+- Containerized application using Docker
+- Image storage in Azure Container Registry (ACR)
+- Deployment to Azure Kubernetes Service (AKS)
+- Automated CI/CD pipeline
+- PowerShell-based health check before deployment
+- Public exposure through Kubernetes LoadBalancer Service
 
-- Provisioning secure Azure infrastructure from scratch (networking, storage, compute)
-- Building, tagging, and pushing a Docker image to a private container registry
-- Deploying and exposing an application on a managed Kubernetes cluster
-- Designing a CI/CD pipeline with a **scripted health-check gate** — deployment
-  only proceeds if the cluster is verified healthy first
-- Configuring Agile project tracking with a custom workflow automation rule
+## Project Structure
+
+```text
+azure-aks-cicd-final/
+├── app/
+├── k8s/
+├── scripts/
+└── docs/
   
 ## Architecture Diagram
 
