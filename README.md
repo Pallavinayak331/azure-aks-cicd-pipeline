@@ -106,7 +106,7 @@ browser screenshot in `docs/screenshots/`.
 ![CI pipeline](docs/screenshots/ci-pipeline-success.png)
 
 **CD pipeline — deploy + health-check gate**
-![CD pipeline](docs/screenshots/cd-pipeline-success.png)
+![CD pipeline](docs/screenshots/release-pipeline.png)
 
 **Live result**
 ![Hello World live](docs/screenshots/Hello-World-Live.png)
