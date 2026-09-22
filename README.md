@@ -10,16 +10,6 @@ This project demonstrates an end-to-end CI/CD workflow using Azure DevOps, Azure
 - Automated CI/CD pipeline
 - PowerShell-based health check before deployment
 - Public exposure through Kubernetes LoadBalancer Service
-
-## Project Structure
-
-```text
-azure-aks-cicd-pipeline/
-├── app/
-├── k8s/
-├── scripts/
-└── docs/
-```
   
 ## Architecture Diagram
 
