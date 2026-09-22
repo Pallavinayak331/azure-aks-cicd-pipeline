@@ -14,7 +14,7 @@ This project demonstrates an end-to-end CI/CD workflow using Azure DevOps, Azure
 ## Project Structure
 
 ```text
-azure-aks-cicd-final/
+azure-aks-cicd-pipeline/
 ├── app/
 ├── k8s/
 ├── scripts/
