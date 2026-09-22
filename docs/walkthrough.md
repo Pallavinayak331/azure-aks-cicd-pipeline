@@ -31,18 +31,18 @@ sudo apt install -y git
 
 ## 9–11. App containerization
 
-\`\`\`bash
+```bash
 mkdir hello-world-app && cd hello-world-app
 touch index.html   # content in app/index.html of this repo
 vi Dockerfile        # content in app/Dockerfile of this repo
 
 sudo docker build -t hello-world-app .
 sudo docker run -p 80:80 hello-world-app   # verified locally before pushing
-\`\`\`
+```
 
 ## 12–13. AKS + ACR
 
-\`\`\`bash
+```bash
 az aks create \
   --resource-group DevEnvironment-RG \
   --name Dev-AKS \
@@ -67,7 +67,7 @@ az aks update \
 
 az aks get-credentials --resource-group DevEnvironment-RG --name Dev-AKS
 kubectl apply -f k8s/deployment.yaml
-\`\`\`
+```
 
 ## Azure DevOps CI/CD Pipeline
 
@@ -112,11 +112,11 @@ Both stages succeeded end-to-end (see `docs/screenshots/` for the run logs).
 The original `Deployment.yaml` alone wasn't reachable from outside the
 cluster, so a `Service` of type `LoadBalancer` was added and applied directly:
 
-\`\`\`bash
+```bash
 kubectl apply -f service.yaml
 kubectl get svc
 # hello-world-service   LoadBalancer   10.0.70.8   20.66.52.39   80:31289/TCP
-\`\`\`
+```
 
 Visiting the external IP in a browser confirmed the deployed app was live and
 serving the "Hello, World!" page.
