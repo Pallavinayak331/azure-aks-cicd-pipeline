@@ -19,6 +19,7 @@ azure-aks-cicd-final/
 ├── k8s/
 ├── scripts/
 └── docs/
+```
   
 ## Architecture Diagram
 
