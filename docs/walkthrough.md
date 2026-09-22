@@ -19,15 +19,15 @@ Provisioned via the Azure Portal:
 
 SSH'd into the VM and installed:
 
-\`\`\`bash
-sudo apt update
+```bash
+sudo apt update 
 sudo apt install -y docker.io
-sudo systemctl start docker
+sudo systemctl start docker 
 sudo systemctl enable docker
 sudo usermod -aG docker azure-dev-user
 
 sudo apt install -y git
-\`\`\`
+```
 
 ## 9–11. App containerization
 
