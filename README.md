@@ -103,7 +103,7 @@ browser screenshot in `docs/screenshots/`.
 ## Screenshots
 
 **CI pipeline — build, tag, push (all stages passing)**
-![CI pipeline](docs/screenshots/ci-pipeline-success.png)
+![CI pipeline](docs/screenshots/ci-pipeline.png)
 
 **CD pipeline — deploy + health-check gate**
 ![CD pipeline](docs/screenshots/release-pipeline.png)
