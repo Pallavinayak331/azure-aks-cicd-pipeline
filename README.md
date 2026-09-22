@@ -1,4 +1,4 @@
-# Azure End-to-End DevOps Pipeline — Provisioning to Production
+# Azure End-to-End DevOps Pipeline
 
 A complete DevOps workflow built and executed on Azure: infrastructure
 provisioned via the Azure Portal and CLI, a containerized app built and
