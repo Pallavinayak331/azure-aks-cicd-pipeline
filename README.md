@@ -31,21 +31,58 @@ flowchart TD
     D --> E["Hello, World!"]
 ```
 
-## CI/CD Workflow
+## 🚀 CI/CD Workflow
 
-```mermaid
-flowchart TD
-    A[git push] --> B[Clone Repository]
-    B --> C[Build Docker Image]
-    C --> D[Tag Image]
-    D --> E[Push Image to ACR]
+```text
+                           git push
+                              │
+                              ▼
 
-    E --> F[Download Build Artifact]
-    F --> G[Run script.ps1 Health Check]
+┌─────────────────────────────────────────────┐
+│            CI : Build Pipeline              │
+├─────────────────────────────────────────────┤
+│ ✅ Clone Repository                         │
+│ ✅ Build Docker Image                       │
+│ ✅ Tag Docker Image                         │
+│ ✅ Push Image to Azure Container Registry   │
+│ ✅ Publish Deployment Artifact              │
+└─────────────────────────────────────────────┘
+                              │
+                              ▼
 
-    G -->|Healthy| H[Deploy to AKS]
-    G -->|Unhealthy| I[Stop Deployment]
+┌─────────────────────────────────────────────┐
+│           CD : Release Pipeline             │
+├─────────────────────────────────────────────┤
+│ ✅ Download Build Artifact                  │
+│ ✅ Validate AKS Cluster Health              │
+│ ✅ Deploy Application to AKS                │
+│ ✅ Verify Kubernetes Rollout Status         │
+│ ✅ Perform Application Health Check         │
+└─────────────────────────────────────────────┘
+                              │
+                              ▼
+
+                    🌐 Application Live
+                      ("Hello, World!")
 ```
+
+### Pipeline Summary
+
+**CI Pipeline**
+- Clone source code from repository
+- Build Docker image
+- Tag image with version
+- Push image to Azure Container Registry (ACR)
+- Publish deployment artifacts
+
+**CD Pipeline**
+- Download build artifacts
+- Validate AKS cluster health
+- Deploy Kubernetes manifests
+- Verify deployment rollout
+- Perform post-deployment validation
+
+**Result:** Every `git push` automatically triggers a complete build, containerization, and deployment workflow to Azure Kubernetes Service (AKS).
 
 
 ## Resources provisioned
