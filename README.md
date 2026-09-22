@@ -18,35 +18,33 @@ screenshots of each stage are in [`docs/screenshots/`](docs/screenshots/).
 - Designing a CI/CD pipeline with a **scripted health-check gate** — deployment
   only proceeds if the cluster is verified healthy first
 - Configuring Agile project tracking with a custom workflow automation rule
+  
+## Architecture Diagram
 
-## Architecture
+```mermaid
+flowchart TD
+    A[Dev VM<br/>Docker, Git] -->|Build & Push Image| B[Azure Container Registry<br/>devacr54321]
+    B -->|Pull Image| C[Azure Kubernetes Service<br/>Dev-AKS]
+    C -->|LoadBalancer Service| D[Public IP]
+    D --> E["Hello, World!"]
 ```
-Dev-VM (Docker, Git)
-│
-│ build & push image
-▼
-Azure Container Registry (devacr54321)
-│
-│ pull image
-▼
-Azure Kubernetes Service (Dev-AKS)
-│
-│ exposed via LoadBalancer Service
-▼
-Public IP ──▶ "Hello, World!" reachable over HTTP
 
-CI/CD automates the middle of this flow:
-git push
-│
-▼
-┌─────────────────────────┐ ┌───────────────────────────────────┐
-│ CI: Build Pipeline │────▶│ CD: Release Pipeline │
-│ 1. Clone repo │ │ 1. Download build artifact │
-│ 2. Build Docker image │ │ 2. Run script.ps1 health check │
-│ 3. Tag image │ │ → cluster unhealthy = STOP here │
-│ 4. Push to ACR │ │ 3. Deploy to AKS │
-└─────────────────────────┘ └───────────────────────────────────┘
+## CI/CD Workflow
+
+```mermaid
+flowchart TD
+    A[git push] --> B[Clone Repository]
+    B --> C[Build Docker Image]
+    C --> D[Tag Image]
+    D --> E[Push Image to ACR]
+
+    E --> F[Download Build Artifact]
+    F --> G[Run script.ps1 Health Check]
+
+    G -->|Healthy| H[Deploy to AKS]
+    G -->|Unhealthy| I[Stop Deployment]
 ```
+
 
 ## Resources provisioned
 
